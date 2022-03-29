@@ -6,11 +6,33 @@
 /*   By: jeulliot <jeulliot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 17:56:23 by jeulliot          #+#    #+#             */
-/*   Updated: 2022/03/29 14:42:07 by jeulliot         ###   ########.fr       */
+/*   Updated: 2022/03/29 18:59:13 by jeulliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+// a suppprimer
+void	ft_print_tab(t_data data)
+{
+	int	i;
+
+	i = 0;
+	printf("\na : \n");
+	while (i < data.a.size)
+	{
+		printf("%d\n", data.a.tab[i]);
+		i ++;
+	}
+	i = 0;
+	printf("\nb : \n");
+	while (i < data.b.size)
+	{
+		printf("%d\n", data.b.tab[i]);
+		i ++;
+	}
+	printf("\n");
+}
 
 int	ft_is_number(char *str)
 {
@@ -48,17 +70,17 @@ void	ft_arg_error(int argc, char **argv)
 	}
 }
 
-void	ft_is_duplicate(int *tab, int argc)
+void	ft_is_duplicate(int *tab, int size)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while (i < argc - 1)
+	while (i < size - 1)
 	{
 		j = i + 1;
-		while (j + i < argc)
-		{
+		while (j < size)
+		{		
 			if (tab[j] == tab[i])
 			{
 				write (2, "Error\n", 6);
@@ -71,40 +93,25 @@ void	ft_is_duplicate(int *tab, int argc)
 	}
 }
 
-//marche pas
-/*void	ft_is_more_than_integer(char *argvi)
-{
-	int	i;
-
-	i = 0;
-
-	i ++;
-	
-}*/
-
 int	main(int argc, char **argv)
 {
-	int	*tab;
-	int	i;
+	t_data	data;
+	int		i;
 
 	i = 1;
 	if (argc == 1)
 		return (-1);
 	ft_arg_error(argc, argv);
-	tab = malloc(sizeof(int) * (argc - 1));
+	data.a.tab = malloc(sizeof(int) * (argc - 1));
 	while (i < argc)
 	{				
-		//ft_is_more_than_integer(argv[i]);
-		tab[i - 1] = ft_atoi(argv[i]);
-		i ++;
-	}	
-	ft_is_duplicate(tab, argc);	
-	i = 0;
-	ft_sa(tab, argc - 1);
-	while (i < argc - 1)
-	{
-		printf("%d\n", tab[i]);
+		data.a.tab[i - 1] = ft_atoi(argv[i]);
 		i ++;
 	}
+	data.a.size = i - 1;
+	ft_is_duplicate(data.a.tab, data.a.size);
+	data.b.tab = malloc(sizeof(int) * (argc - 1));
+	data.b.size = 0;
+	data = ft_sort(data);
 	return (0);
 }
