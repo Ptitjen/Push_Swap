@@ -6,11 +6,11 @@
 /*   By: jeulliot <jeulliot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 14:04:57 by jeulliot          #+#    #+#             */
-/*   Updated: 2022/04/04 12:16:25 by jeulliot         ###   ########.fr       */
+/*   Updated: 2022/04/04 13:01:50 by jeulliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 int	ft_is_whitespace(char c)
 {

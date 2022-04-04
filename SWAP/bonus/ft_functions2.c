@@ -6,11 +6,11 @@
 /*   By: jeulliot <jeulliot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 13:20:16 by jeulliot          #+#    #+#             */
-/*   Updated: 2022/04/04 12:16:23 by jeulliot         ###   ########.fr       */
+/*   Updated: 2022/04/04 13:11:58 by jeulliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 t_data	ft_rb(t_data data)
 {
@@ -28,7 +28,6 @@ t_data	ft_rb(t_data data)
 		}
 		data.b.tab[i] = temp;
 	}
-	write (1, "rb\n", 3);
 	return (data);
 }
 
@@ -48,7 +47,6 @@ t_data	ft_ra(t_data data)
 		}
 		data.a.tab[i] = temp;
 	}
-	write (1, "ra\n", 3);
 	return (data);
 }
 
@@ -73,6 +71,5 @@ t_data	ft_rr(t_data data)
 			data.b.tab[i] = data.b.tab[i + 1];
 		data.b.tab[i] = temp;
 	}
-	write (1, "rr\n", 3);
 	return (data);
 }

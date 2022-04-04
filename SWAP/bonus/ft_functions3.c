@@ -6,11 +6,11 @@
 /*   By: jeulliot <jeulliot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 17:40:44 by jeulliot          #+#    #+#             */
-/*   Updated: 2022/04/04 14:11:58 by jeulliot         ###   ########.fr       */
+/*   Updated: 2022/04/04 13:12:09 by jeulliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 t_data	ft_rrotate_a(t_data data)
 {
@@ -48,7 +48,6 @@ t_data	ft_rra(t_data data)
 {
 	if (data.a.size > 1)
 		data = ft_rrotate_a(data);
-	write (1, "rra\n", 4);
 	return (data);
 }
 
@@ -56,7 +55,6 @@ t_data	ft_rrb(t_data data)
 {
 	if (data.b.size > 1)
 		data = ft_rrotate_b(data);
-	write (1, "rrb\n", 4);
 	return (data);
 }
 
@@ -66,6 +64,5 @@ t_data	ft_rrr(t_data data)
 		data = ft_rrotate_a(data);
 	if (data.b.size > 1)
 		data = ft_rrotate_b(data);
-	write (1, "rrr\n", 4);
 	return (data);
 }

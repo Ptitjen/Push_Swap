@@ -6,29 +6,45 @@
 #    By: jeulliot <jeulliot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/28 17:56:04 by jeulliot          #+#    #+#              #
-#    Updated: 2022/04/01 16:00:45 by jeulliot         ###   ########.fr        #
+#    Updated: 2022/04/04 17:20:25 by jeulliot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	= srcs/push_swap.c srcs/ft_atoi.c srcs/ft_functions1.c srcs/ft_putnbr_fd.c srcs/utils.c \
-			srcs/ft_functions2.c srcs/ft_functions3.c srcs/ft_sort.c \
+SRCS	= srcs/push_swap.c \
 			srcs/algorithm.c \
-			srcs/ft_sort_int_tab.c
+			srcs/ft_atoi.c \
+			srcs/ft_functions1.c srcs/ft_functions2.c srcs/ft_functions3.c \
+			srcs/utils1.c srcs/utils2.c \
+			srcs/errors.c
+
+SRCSBONUS	= bonus/ft_atoi.c \
+			bonus/ft_strcmp.c \
+			bonus/ft_functions1.c bonus/ft_functions2.c bonus/ft_functions3.c \
+			bonus/utils_bonus.c \
+			bonus/errors.c \
+			bonus/checker.c \
+			bonus/ft_split.c \
+			bonus/ft_strjoin.c \
+			bonus/get_next_line.c bonus/get_next_line_utils.c
 
 NAME	= push_swap
 
-CC	= gcc
+BONUS	= checker
 
-RM	= rm -f
+RM	= @rm -f
 
 all:	$(NAME)		
 
 $(NAME):	${SRCS}
 			@gcc -Wall -Wextra -Werror ${SRCS} -o ${NAME}
 			
+bonus:		${SRCSBONUS}
+			@gcc -Wall -Wextra -Werror ${SRCSBONUS} -o ${BONUS}
+
 clean:
 
 fclean:	clean
 	${RM} ${NAME}
+	${RM} ${BONUS}
 
 re:	fclean all

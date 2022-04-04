@@ -6,11 +6,11 @@
 /*   By: jeulliot <jeulliot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 13:20:07 by jeulliot          #+#    #+#             */
-/*   Updated: 2022/04/04 12:16:24 by jeulliot         ###   ########.fr       */
+/*   Updated: 2022/04/04 13:41:32 by jeulliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 t_data	ft_sa(t_data data)
 {
@@ -22,7 +22,6 @@ t_data	ft_sa(t_data data)
 		data.a.tab[0] = data.a.tab[1];
 		data.a.tab[1] = temp;
 	}
-	write (1, "sa\n", 3);
 	return (data);
 }
 
@@ -36,7 +35,6 @@ t_data	ft_sb(t_data data)
 		data.b.tab[0] = data.b.tab[1];
 		data.b.tab[1] = temp;
 	}
-	write (1, "sb\n", 3);
 	return (data);
 }
 
@@ -56,7 +54,6 @@ t_data	ft_ss(t_data data)
 		data.b.tab[0] = data.b.tab[1];
 		data.b.tab[1] = temp;
 	}
-	write (1, "ss\n", 3);
 	return (data);
 }
 
@@ -84,7 +81,6 @@ t_data	ft_pa(t_data data)
 		data.a.tab[0] = temp;
 		data.a.size ++;
 	}
-	write (1, "pa\n", 3);
 	return (data);
 }
 
@@ -112,6 +108,5 @@ t_data	ft_pb(t_data data)
 		data.b.tab[0] = temp;
 		data.b.size ++;
 	}	
-	write (1, "pb\n", 3);
 	return (data);
 }
