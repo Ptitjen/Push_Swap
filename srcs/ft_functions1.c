@@ -6,7 +6,7 @@
 /*   By: jeulliot <jeulliot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 13:20:07 by jeulliot          #+#    #+#             */
-/*   Updated: 2022/04/04 17:46:42 by jeulliot         ###   ########.fr       */
+/*   Updated: 2022/04/05 17:06:06 by jeulliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ t_data	ft_pa(t_data data)
 	if (data.b.size > 0)
 	{
 		temp = data.b.tab[0];
-		while (i < data.b.size)
+		while (i < data.b.size - 1)
 		{
 			data.b.tab[i] = data.b.tab[i + 1];
 			i ++;
@@ -97,7 +97,7 @@ t_data	ft_pb(t_data data)
 	if (data.a.size > 0)
 	{
 		temp = data.a.tab[0];
-		while (i < data.a.size)
+		while (i < data.a.size - 1)
 		{
 			data.a.tab[i] = data.a.tab[i + 1];
 			i ++;

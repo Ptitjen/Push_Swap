@@ -6,7 +6,7 @@
 /*   By: jeulliot <jeulliot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 17:56:35 by jeulliot          #+#    #+#             */
-/*   Updated: 2022/04/05 10:42:43 by jeulliot         ###   ########.fr       */
+/*   Updated: 2022/04/05 17:42:27 by jeulliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int		ft_sp(const char *s1, const char *s2, int n);
 void	ft_arg_error(int argc, char **argv);
 void	ft_error_in_stdin(t_data data, char *str, char *new);
 void	ft_is_duplicate(int *tab, int size);
+void	ft_malloc_error(t_data data, int choice);
 int		ft_is_int_max_or_min(const char *str, int k, int i, int m);
 void	ft_result(t_data data, char *str, char **inst);
 char	*get_next_line(int fd);
@@ -56,5 +57,4 @@ t_data	ft_rra(t_data data);
 t_data	ft_rrb(t_data data);
 t_data	ft_rrr(t_data data);
 t_data	ft_sort(t_data data);
-
 #endif

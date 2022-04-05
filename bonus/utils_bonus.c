@@ -6,7 +6,7 @@
 /*   By: jeulliot <jeulliot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 17:53:14 by jeulliot          #+#    #+#             */
-/*   Updated: 2022/04/05 10:43:26 by jeulliot         ###   ########.fr       */
+/*   Updated: 2022/04/05 18:01:01 by jeulliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,9 @@ t_data	ft_fill_tab(t_data data, int argc, char **argv)
 
 void	ft_result(t_data data, char *str, char **inst)
 {
+	int	i;
+
+	i = 0;
 	if (data.b.size != 0 || ft_is_sort(data) == 0)
 		write (1, "KO\n", 3);
 	else
@@ -51,5 +54,25 @@ void	ft_result(t_data data, char *str, char **inst)
 	free(data.a.tab);
 	free(data.b.tab);
 	free(str);
+	while (inst[i] != 0)
+	{
+		free(inst[i]);
+		i ++;
+	}
 	free(inst);
+}
+
+void	ft_malloc_error(t_data data, int choice)
+{
+	if (choice == 1)
+	{
+		free (data.a.tab);
+		exit (-1);
+	}
+	if (choice == 2)
+	{
+		free (data.a.tab);
+		free (data.b.tab);
+		exit (-1);
+	}
 }

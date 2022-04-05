@@ -6,7 +6,7 @@
 /*   By: jeulliot <jeulliot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 17:56:35 by jeulliot          #+#    #+#             */
-/*   Updated: 2022/04/05 10:05:39 by jeulliot         ###   ########.fr       */
+/*   Updated: 2022/04/05 17:18:01 by jeulliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		ft_is_int_max_or_min(const char *str, int k, int i, int m);
 int		ft_is_sort(t_data data);
 int		ft_is_operator(char c);
 int		ft_is_whitespace(char c);
-int		ft_median(int *tab, int size);
+int		ft_median(int size, t_data data);
 int		ft_rest_of_a_is_sort(t_data data);
 int		ft_str_is_num(char c);
 int		ft_search_max_in_a(t_data data);
@@ -59,5 +59,6 @@ t_data	ft_need_rotate_only(t_data data);
 t_data	ft_sort_in_two(t_data data, int size);
 t_data	ft_algorithm_mini(t_data data);
 t_data	ft_algorithm_small(t_data data);
+t_data	ft_fill_tab(t_data data, int argc, char **argv);
 
 #endif

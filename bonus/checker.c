@@ -6,7 +6,7 @@
 /*   By: jeulliot <jeulliot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 12:34:14 by jeulliot          #+#    #+#             */
-/*   Updated: 2022/04/05 10:42:49 by jeulliot         ###   ########.fr       */
+/*   Updated: 2022/04/05 18:03:39 by jeulliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,17 @@ char	*ft_fill_instruction_line(char *str, char *new, t_data data)
 	return (str);
 }
 
+t_data	ft_init_tab(t_data data, int argc, char **argv)
+{
+	data = ft_fill_tab(data, argc, argv);
+	ft_is_duplicate(data.a.tab, data.a.size);
+	data.b.tab = malloc(sizeof(int) * (argc - 1));
+	if (data.b.tab == NULL)
+		ft_malloc_error(data, 1);
+	data.b.size = 0;
+	return (data);
+}
+
 int	main(int argc, char **argv)
 {
 	t_data	data;
@@ -81,11 +92,12 @@ int	main(int argc, char **argv)
 		exit (-1);
 	ft_arg_error(argc, argv);
 	data.a.tab = malloc(sizeof(int) * (argc - 1));
-	data = ft_fill_tab(data, argc, argv);
-	ft_is_duplicate(data.a.tab, data.a.size);
-	data.b.tab = malloc(sizeof(int) * (argc - 1));
-	data.b.size = 0;
+	if (data.a.tab == NULL)
+		exit (-1);
+	data = ft_init_tab(data, argc, argv);
 	str = malloc(sizeof(char));
+	if (str == NULL)
+		ft_malloc_error(data, 2);
 	str[0] = '\0';
 	new = get_next_line(1);
 	str = ft_fill_instruction_line(str, new, data);
@@ -95,3 +107,4 @@ int	main(int argc, char **argv)
 	ft_result(data, str, inst);
 	return (0);
 }
+//chercher dernier leak
