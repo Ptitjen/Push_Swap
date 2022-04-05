@@ -6,7 +6,7 @@
 /*   By: jeulliot <jeulliot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 17:53:14 by jeulliot          #+#    #+#             */
-/*   Updated: 2022/04/04 17:29:31 by jeulliot         ###   ########.fr       */
+/*   Updated: 2022/04/05 10:43:26 by jeulliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,14 @@ t_data	ft_fill_tab(t_data data, int argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{				
-		data.a.tab[i - 1] = ft_atoi(argv[i]);
+		data.a.tab[i - 1] = ft_atoi(argv[i], data.a.tab);
 		i ++;
 	}
 	data.a.size = i - 1;
 	return (data);
 }
 
-void	ft_result(t_data data, char *str)
+void	ft_result(t_data data, char *str, char **inst)
 {
 	if (data.b.size != 0 || ft_is_sort(data) == 0)
 		write (1, "KO\n", 3);
@@ -51,4 +51,5 @@ void	ft_result(t_data data, char *str)
 	free(data.a.tab);
 	free(data.b.tab);
 	free(str);
+	free(inst);
 }

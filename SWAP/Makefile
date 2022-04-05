@@ -6,7 +6,7 @@
 #    By: jeulliot <jeulliot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/28 17:56:04 by jeulliot          #+#    #+#              #
-#    Updated: 2022/04/04 17:20:25 by jeulliot         ###   ########.fr        #
+#    Updated: 2022/04/04 17:46:38 by jeulliot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,9 @@ all:	$(NAME)
 $(NAME):	${SRCS}
 			@gcc -Wall -Wextra -Werror ${SRCS} -o ${NAME}
 			
-bonus:		${SRCSBONUS}
+bonus:	$(BONUS)
+
+$(BONUS) :	${SRCSBONUS}
 			@gcc -Wall -Wextra -Werror ${SRCSBONUS} -o ${BONUS}
 
 clean:

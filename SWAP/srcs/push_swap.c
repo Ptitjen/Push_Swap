@@ -6,7 +6,7 @@
 /*   By: jeulliot <jeulliot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 17:56:23 by jeulliot          #+#    #+#             */
-/*   Updated: 2022/04/04 12:16:20 by jeulliot         ###   ########.fr       */
+/*   Updated: 2022/04/05 10:20:11 by jeulliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	main(int argc, char **argv)
 	data.a.tab = malloc(sizeof(int) * (argc - 1));
 	while (i < argc)
 	{				
-		data.a.tab[i - 1] = ft_atoi(argv[i]);
+		data.a.tab[i - 1] = ft_atoi(argv[i], data.a.tab);
 		i ++;
 	}
 	data.a.size = i - 1;

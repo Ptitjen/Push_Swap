@@ -6,7 +6,7 @@
 /*   By: jeulliot <jeulliot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 14:04:57 by jeulliot          #+#    #+#             */
-/*   Updated: 2022/04/04 13:01:50 by jeulliot         ###   ########.fr       */
+/*   Updated: 2022/04/05 10:22:26 by jeulliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,17 +54,18 @@ int	ft_sp(const char *s1, const char *s2, int n)
 	return (0);
 }
 
-void	ft_is_int_max_or_min(const char *str, int k, int i, int m)
+int	ft_is_int_max_or_min(const char *str, int k, int i, int m)
 {
 	if ((k >= 10 && ft_sp(str + i, "2147483647", 10) && m == 1)
 		|| (k >= 10 && ft_sp(str + i, "2147483648", 10) && m == -1))
 	{
 		write(2, "Error\n", 6);
-		exit (-1);
+		return (1);
 	}
+	return (0);
 }
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *str, int *tab)
 {
 	int				i;
 	int				m;
@@ -77,14 +78,15 @@ int	ft_atoi(const char *str)
 	while (ft_is_whitespace(str[i]) == 1)
 		i ++;
 	if (ft_is_operator(str[i]) != 0)
-	{
-		m = ft_is_operator(str[i]);
-		i ++;
-	}
+		m = ft_is_operator(str[i++]);
 	k = 0;
 	while (ft_str_is_num(str[i + k]) == 1 && str[i + k] != '\0')
 	{
-		ft_is_int_max_or_min(str, k, i, m);
+		if (ft_is_int_max_or_min(str, k, i, m) == 1)
+		{
+			free(tab);
+			exit(-1);
+		}
 		n = n * 10 + str[i + k] - 48;
 		k ++;
 	}

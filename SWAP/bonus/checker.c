@@ -6,7 +6,7 @@
 /*   By: jeulliot <jeulliot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 12:34:14 by jeulliot          #+#    #+#             */
-/*   Updated: 2022/04/04 17:40:51 by jeulliot         ###   ########.fr       */
+/*   Updated: 2022/04/05 10:42:49 by jeulliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ char	*ft_fill_instruction_line(char *str, char *new, t_data data)
 {
 	while (new != NULL)
 	{
-		ft_error_in_stdin(data, new);
+		ft_error_in_stdin(data, new, str);
 		str = ft_strjoin(str, new);
 		free (new);
 		new = get_next_line(1);
@@ -92,6 +92,6 @@ int	main(int argc, char **argv)
 	inst = ft_split(str, '\n');
 	while (inst[++i] != NULL)
 		data = ft_execute_instruction(data, inst[i]);
-	ft_result(data, str);
+	ft_result(data, str, inst);
 	return (0);
 }

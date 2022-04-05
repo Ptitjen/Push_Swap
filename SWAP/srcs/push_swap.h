@@ -6,7 +6,7 @@
 /*   By: jeulliot <jeulliot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 17:56:35 by jeulliot          #+#    #+#             */
-/*   Updated: 2022/04/04 15:02:25 by jeulliot         ###   ########.fr       */
+/*   Updated: 2022/04/05 10:05:39 by jeulliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ typedef struct s_data {
 	t_tab	b;
 }	t_data;
 
-int		ft_atoi(const char *str);
+int		ft_atoi(const char *str, int *tab);
+int		ft_is_int_max_or_min(const char *str, int k, int i, int m);
 int		ft_is_sort(t_data data);
 int		ft_is_operator(char c);
 int		ft_is_whitespace(char c);
@@ -38,7 +39,6 @@ int		ft_search_min(t_data data);
 int		ft_sp(const char *s1, const char *s2, int n);
 void	ft_arg_error(int argc, char **argv);
 void	ft_is_duplicate(int *tab, int size);
-void	ft_is_int_max_or_min(const char *str, int k, int i, int m);
 void	ft_sort_int_tab(int *tab, int size);
 t_data	ft_sa(t_data data);
 t_data	ft_sb(t_data data);
