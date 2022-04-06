@@ -6,7 +6,7 @@
 /*   By: jeulliot <jeulliot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 17:56:35 by jeulliot          #+#    #+#             */
-/*   Updated: 2022/04/05 17:42:27 by jeulliot         ###   ########.fr       */
+/*   Updated: 2022/04/06 10:20:31 by jeulliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_malloc_error(t_data data, int choice);
 int		ft_is_int_max_or_min(const char *str, int k, int i, int m);
 void	ft_result(t_data data, char *str, char **inst);
 char	*get_next_line(int fd);
-char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strjoin(char *s1, char *s2);
 char	**ft_split(char *s, char c);
 int		ft_strcmp(char *str1, char *str2);
 t_data	ft_fill_tab(t_data data, int argc, char **argv);

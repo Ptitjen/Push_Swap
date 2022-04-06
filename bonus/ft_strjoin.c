@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeulliot <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jeulliot <jeulliot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 10:52:08 by jeulliot          #+#    #+#             */
-/*   Updated: 2022/02/23 15:57:40 by jeulliot         ###   ########.fr       */
+/*   Updated: 2022/04/06 10:26:22 by jeulliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdlib.h>
 
-static size_t	ft_strlen1(const char *str)
+static size_t	ft_strlen1(char *str)
 {
 	size_t	i;
 
@@ -24,7 +24,7 @@ static size_t	ft_strlen1(const char *str)
 	return (i);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	size_t	i;
 	size_t	lens1;
@@ -48,5 +48,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		i ++;
 	}
 	dest[i] = '\0';
+	free (s1);
+	free (s2);
 	return (dest);
 }

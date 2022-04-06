@@ -6,11 +6,12 @@
 /*   By: jeulliot <jeulliot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:41:11 by jeulliot          #+#    #+#             */
-/*   Updated: 2022/04/04 13:01:31 by jeulliot         ###   ########.fr       */
+/*   Updated: 2022/04/06 10:32:30 by jeulliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"get_next_line.h"
+#include "get_next_line.h"
+#include "push_swap_bonus.h"
 
 char	*ft_copy_temp(char *str)
 {
@@ -85,5 +86,7 @@ char	*get_next_line(int fd)
 		return (NULL);
 	line = ft_fill_line(tmp);
 	tmp = ft_copy_temp(tmp);
+	if (ft_is_instruction(line) == 0)
+		free(tmp);
 	return (line);
 }

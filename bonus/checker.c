@@ -6,7 +6,7 @@
 /*   By: jeulliot <jeulliot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 12:34:14 by jeulliot          #+#    #+#             */
-/*   Updated: 2022/04/05 18:03:39 by jeulliot         ###   ########.fr       */
+/*   Updated: 2022/04/06 10:33:54 by jeulliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ char	*ft_fill_instruction_line(char *str, char *new, t_data data)
 	{
 		ft_error_in_stdin(data, new, str);
 		str = ft_strjoin(str, new);
-		free (new);
 		new = get_next_line(1);
 	}
 	return (str);
@@ -107,4 +106,3 @@ int	main(int argc, char **argv)
 	ft_result(data, str, inst);
 	return (0);
 }
-//chercher dernier leak
