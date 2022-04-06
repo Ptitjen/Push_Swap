@@ -6,7 +6,7 @@
 /*   By: jeulliot <jeulliot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 14:04:57 by jeulliot          #+#    #+#             */
-/*   Updated: 2022/04/05 10:19:10 by jeulliot         ###   ########.fr       */
+/*   Updated: 2022/04/06 11:00:36 by jeulliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ int	ft_sp(const char *s1, const char *s2, int n)
 
 int	ft_is_int_max_or_min(const char *str, int k, int i, int m)
 {
-	if ((k >= 10 && ft_sp(str + i, "2147483647", 10) && m == 1)
-		|| (k >= 10 && ft_sp(str + i, "2147483648", 10) && m == -1))
+	if ((k >= 10 || (k == 9 && ft_sp(str + i, "2147483647", 10) > 0 && m == 1))
+		|| (k == 9 && ft_sp(str + i, "2147483648", 10) > 0 && m == -1))
 	{
 		write(2, "Error\n", 6);
 		return (1);

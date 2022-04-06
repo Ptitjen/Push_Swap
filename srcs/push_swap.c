@@ -6,11 +6,36 @@
 /*   By: jeulliot <jeulliot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 17:56:23 by jeulliot          #+#    #+#             */
-/*   Updated: 2022/04/05 17:15:13 by jeulliot         ###   ########.fr       */
+/*   Updated: 2022/04/06 14:10:43 by jeulliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+t_data	ft_presort_large_stack(t_data data, int size)
+{
+	int	sort;
+
+	sort = 2;
+	data = ft_sort_in_two(data, size);
+	if (size >= 60)
+		data = ft_sort_in_two(data, size / 2);
+	if (size >= 80)
+		data = ft_sort_in_two(data, size / 4);
+	if (size >= 100)
+		data = ft_sort_in_two(data, size / 8);
+	while (data.b.size != 0)
+		data = ft_pa(data);
+	if (size > 100)
+	{
+		while (size / sort > 1)
+		{
+			data = ft_sort_in_two(data, size / sort);
+			sort = sort * 2;
+		}
+	}
+	return (data);
+}
 
 t_data	ft_sort(t_data data)
 {	
@@ -18,17 +43,9 @@ t_data	ft_sort(t_data data)
 
 	size = data.a.size;
 	if (size > 5 && ft_is_sort(data) == 0)
-	{	
-		data = ft_sort_in_two(data, size);
-		if (size >= 60)
-			data = ft_sort_in_two(data, size / 2);
-		if (size >= 80)
-			data = ft_sort_in_two(data, size / 4);
-		while (data.b.size != 0)
-			data = ft_pa(data);
-	}
+		data = ft_presort_large_stack(data, size);
 	while (ft_is_sort(data) == 0)
-		data = ft_algorithm_small(data);
+			data = ft_algorithm_small(data);
 	return (data);
 }
 
