@@ -6,7 +6,7 @@
 /*   By: jeulliot <jeulliot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 17:53:14 by jeulliot          #+#    #+#             */
-/*   Updated: 2022/04/05 17:18:18 by jeulliot         ###   ########.fr       */
+/*   Updated: 2022/04/06 17:01:41 by jeulliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,23 @@ int	ft_rest_of_a_is_sort(t_data data)
 		while (i < data.a.size - 1)
 		{
 			if (data.a.tab[i] > data.a.tab[i + 1])
+				return (0);
+			i ++;
+		}
+	}
+	return (1);
+}
+
+int	ft_rest_of_b_is_sort(t_data data)
+{
+	int	i;
+
+	i = 0;
+	if (data.b.size != 0)
+	{
+		while (i < data.b.size - 1)
+		{
+			if (data.b.tab[i] > data.b.tab[i + 1])
 				return (0);
 			i ++;
 		}

@@ -6,7 +6,7 @@
 /*   By: jeulliot <jeulliot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 17:56:35 by jeulliot          #+#    #+#             */
-/*   Updated: 2022/04/06 14:10:19 by jeulliot         ###   ########.fr       */
+/*   Updated: 2022/04/06 17:11:28 by jeulliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ typedef struct s_data {
 	t_tab	a;
 	t_tab	b;
 }	t_data;
-
+int		ft_search_min_b(t_data data);
+int		ft_search_min_a(t_data data);
+int		ft_search_max(t_data data);
+int		ft_rest_of_b_is_sort(t_data data);
 int		ft_atoi(const char *str, int *tab);
 int		ft_is_int_max_or_min(const char *str, int k, int i, int m);
 int		ft_is_sort(t_data data);
@@ -54,11 +57,12 @@ t_data	ft_rra(t_data data);
 t_data	ft_rrb(t_data data);
 t_data	ft_rrr(t_data data);
 t_data	ft_sort(t_data data);
-t_data	ft_move_min_to_the_top(t_data data, int index);
+t_data	ft_move_min_a_to_the_top(t_data data, int index);
+t_data	ft_move_min_b_to_the_top(t_data data, int index);
 t_data	ft_need_rotate_only(t_data data);
 t_data	ft_sort_in_two(t_data data, int size);
 t_data	ft_algorithm_mini(t_data data);
 t_data	ft_algorithm_small(t_data data);
 t_data	ft_fill_tab(t_data data, int argc, char **argv);
-
+t_data	ft_move_max_to_the_top(t_data data, int index);
 #endif
