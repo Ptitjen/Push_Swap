@@ -6,7 +6,7 @@
 /*   By: jeulliot <jeulliot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 17:56:35 by jeulliot          #+#    #+#             */
-/*   Updated: 2022/04/13 10:09:02 by jeulliot         ###   ########.fr       */
+/*   Updated: 2022/04/13 12:47:13 by jeulliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,13 @@ int			ft_part_max_1(t_cut_in_13 nb, int part_tab);
 int			ft_part_max_2(t_cut_in_13 nb, int part_tab);
 int			ft_part_min_1(t_cut_in_13 nb, int part_tab);
 int			ft_part_min_2(t_cut_in_13 nb, int part_tab);
+int			ft_arg_error_tmp(int argc, char **argv);
 void		ft_arg_error(int argc, char **argv);
 void		ft_is_duplicate(int *tab, int size);
 void		ft_sort_int_tab(int *tab, int size);
+size_t		ft_nb_slot(char *str, char c);
+char		**ft_split(char *s, char c);
+char		*ft_strjoin(char *s1, char *s2);
 t_data		ft_sa(t_data data);
 t_data		ft_sb(t_data data);
 t_data		ft_ss(t_data data);

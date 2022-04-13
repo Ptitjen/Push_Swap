@@ -6,7 +6,7 @@
 #    By: jeulliot <jeulliot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/28 17:56:04 by jeulliot          #+#    #+#              #
-#    Updated: 2022/04/13 10:02:18 by jeulliot         ###   ########.fr        #
+#    Updated: 2022/04/13 12:04:47 by jeulliot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ SRCS	= srcs/push_swap.c \
 			srcs/algorithm_large.c \
 			srcs/algorithm_very_large.c \
 			srcs/ft_atoi.c \
+			srcs/ft_split.c srcs/ft_strjoin.c \
 			srcs/ft_functions1.c srcs/ft_functions2.c srcs/ft_functions3.c \
 			srcs/utils1.c srcs/utils2.c srcs/utils3.c srcs/utils4.c \
 			srcs/utils5.c \

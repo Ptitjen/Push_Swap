@@ -6,7 +6,7 @@
 /*   By: jeulliot <jeulliot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 10:07:50 by jeulliot          #+#    #+#             */
-/*   Updated: 2022/04/04 17:54:51 by jeulliot         ###   ########.fr       */
+/*   Updated: 2022/04/13 12:47:33 by jeulliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ void	ft_arg_error(int argc, char **argv)
 {
 	int	i;
 
+	if (argc == 1)
+		exit (-1);
 	i = 1;
 	while (i < argc)
 	{
@@ -53,6 +55,23 @@ void	ft_arg_error(int argc, char **argv)
 		}
 		i ++;
 	}
+}
+
+int	ft_arg_error_tmp(int argc, char **argv)
+{
+	int	i;
+
+	i = 1;
+	while (i < argc)
+	{
+		if (ft_is_number(argv[i]) == 0 || argv[i][0] == '\0')
+		{
+			write (2, "Error\n", 6);
+			return (-1);
+		}
+		i ++;
+	}
+	return (0);
 }
 
 void	ft_is_duplicate(int *tab, int size)
