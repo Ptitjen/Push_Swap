@@ -6,7 +6,7 @@
 /*   By: jeulliot <jeulliot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 10:21:57 by jeulliot          #+#    #+#             */
-/*   Updated: 2022/04/12 10:23:03 by jeulliot         ###   ########.fr       */
+/*   Updated: 2022/04/13 09:41:48 by jeulliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_data	ft_algorithm_mini(t_data data)
 		if (ft_search_min(data) == 0)
 		{
 			data = ft_sa(data);
-			data = ft_ra(data);	
+			data = ft_ra(data);
 		}
 		else if (ft_search_min(data) == 1 && ft_search_max_in_a(data) == 2)
 			data = ft_sa(data);
@@ -41,14 +41,14 @@ t_data	ft_algorithm_mini(t_data data)
 
 t_data	ft_algorithm_small(t_data data)
 {
-	int min;
+	int	min;
 
 	if (data.a.size == 4)
 	{
 		min = ft_search_min(data);
 		data = ft_move_a_to_the_top (data, min);
 		data = ft_pb(data);
-		data = ft_algorithm_mini(data);		
+		data = ft_algorithm_mini(data);
 		data = ft_pa(data);
 	}
 	if (data.a.size == 5)

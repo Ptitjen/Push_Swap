@@ -6,7 +6,7 @@
 /*   By: jeulliot <jeulliot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 17:53:14 by jeulliot          #+#    #+#             */
-/*   Updated: 2022/04/11 21:53:26 by jeulliot         ###   ########.fr       */
+/*   Updated: 2022/04/13 09:38:37 by jeulliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,47 +72,3 @@ void	ft_sort_int_tab(int *tab, int size)
 		tab [cmin] = temp;
 	}
 }
-
-int	ft_median(int size, t_data data)
-{
-	int	i;
-	int	*tab_temp;
-	int	med;
-
-	i = 0;
-	tab_temp = malloc(sizeof(int) * size);
-	if (tab_temp == NULL)
-	{
-		free (data.a.tab);
-		free (data.b.tab);
-		exit (-1);
-	}
-	while (i < size)
-	{
-		tab_temp[i] = data.a.tab[i];
-		i ++;
-	}
-	ft_sort_int_tab(tab_temp, size);
-	med = tab_temp[size / 2];
-	free(tab_temp);
-	return (med);
-}
-
-t_data	ft_sort_in_two(t_data data, int sep)
-{
-	int	i;
-	int	size;
-	
-	i = 0;
-	size = data.a.size / 2;
-	while (i < data.a.size && data.a.size > size)
-	{		
-		if (data.a.tab[0] < sep)
-			data = ft_pb(data);
-		else
-			data = ft_ra(data);
-		i ++;
-	}	
-	return (data);
-}
-

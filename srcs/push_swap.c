@@ -6,16 +6,15 @@
 /*   By: jeulliot <jeulliot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 17:56:23 by jeulliot          #+#    #+#             */
-/*   Updated: 2022/04/12 11:11:25 by jeulliot         ###   ########.fr       */
+/*   Updated: 2022/04/13 09:41:21 by jeulliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
 t_data	ft_sort(t_data data)
 {	
-	data = ft_need_rotate_only(data);	
+	data = ft_need_rotate_only(data);
 	if (ft_is_sort(data))
 		return (data);
 	if (data.a.size <= 3)
